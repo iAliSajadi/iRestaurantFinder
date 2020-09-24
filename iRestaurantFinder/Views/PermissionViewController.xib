@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LocationPermissionViewController" customModule="iRestaurantFinder" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="sva-Mm-RrK">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="486.5"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location-permission" translatesAutoresizingMaskIntoConstraints="NO" id="tUl-t8-7fA">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="406"/>
+                        </imageView>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cX5-bx-GAM">
+                            <rect key="frame" x="0.0" y="406" width="375" height="80.5"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Need your location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3o5-XW-VYS">
+                                    <rect key="frame" x="32" y="8" width="311" height="33"/>
+                                    <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="24"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Please give us access to your location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T3P-Ap-G1Q">
+                                    <rect key="frame" x="32" y="49" width="311" height="23.5"/>
+                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
+                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <edgeInsets key="layoutMargins" top="8" left="32" bottom="8" right="32"/>
+                        </stackView>
+                    </subviews>
+                </stackView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="krB-jc-J5g">
+                    <rect key="frame" x="0.0" y="680" width="375" height="116"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RxQ-Vz-OTv">
+                            <rect key="frame" x="62.5" y="8" width="250" height="50"/>
+                            <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="250" id="TNb-Tg-oyJ"/>
+                                <constraint firstAttribute="height" constant="50" id="iVt-G9-KpC"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
+                            <state key="normal" title="Allow">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="25"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LnE-Vm-i0I">
+                            <rect key="frame" x="62.5" y="58" width="250" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="250" id="uYw-rf-v9N"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
+                            <state key="normal" title="No, Another Time">
+                                <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="titleShadowColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="25"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </button>
+                    </subviews>
+                    <edgeInsets key="layoutMargins" top="8" left="32" bottom="8" right="32"/>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="sva-Mm-RrK" secondAttribute="trailing" id="9U2-zW-iaE"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="krB-jc-J5g" secondAttribute="bottom" constant="16" id="Sbn-dX-4eC"/>
+                <constraint firstItem="tUl-t8-7fA" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.5" id="cT3-d0-0KP"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="krB-jc-J5g" secondAttribute="trailing" id="cqD-iD-3pO"/>
+                <constraint firstItem="krB-jc-J5g" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="qpR-FD-s3J"/>
+                <constraint firstItem="sva-Mm-RrK" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="uUb-Ye-Zuf"/>
+                <constraint firstItem="sva-Mm-RrK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="vug-76-Wuq"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="133" y="154"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="location-permission" width="1073" height="968"/>
+    </resources>
+</document>
