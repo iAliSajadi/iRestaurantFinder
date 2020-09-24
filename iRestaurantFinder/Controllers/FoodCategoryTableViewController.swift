@@ -16,7 +16,11 @@ class FoodCategoryTableViewController: UITableViewController {
     }
     
     func setupNavigationBar() {
-        
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.tintColor = .red
+        navigationController?.navigationBar.titleTextAttributes = [.font: UIFont(name: "Avenir Next", size: 30)!]
+
+        navigationItem.title = "Restaurants"
     }
 
     // MARK: - Table view data source
