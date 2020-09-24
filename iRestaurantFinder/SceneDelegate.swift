@@ -11,7 +11,7 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
+    let locationService = LocationService()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -21,8 +21,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow()
         window?.windowScene = windowScene
-        window?.rootViewController = UINavigationController(rootViewController: RestaurantDetailsViewController())
         window?.makeKeyAndVisible()
+        
+        switch locationService.locationAuthorizationStatus {
+        case .notDetermined, .restricted, .denied:
+            let locationPermissionNavigation = UINavigationController(rootViewController: LocationPermissionViewController())
+            let locationPermissionController = locationPermissionNavigation.topViewController as! LocationPermissionViewController
+            locationPermissionController.locationService = locationService
+            window?.rootViewController = locationPermissionNavigation
+        default:
+            window?.rootViewController = UINavigationController(rootViewController: FoodCategoryTableViewController())
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

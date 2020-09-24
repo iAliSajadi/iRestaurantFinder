@@ -9,13 +9,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LocationPermissionViewController" customModule="iRestaurantFinder" customModuleProvider="target">
             <connections>
-                <outlet property="allowButton" destination="RxQ-Vz-OTv" id="TfR-EV-cOx"/>
-                <outlet property="denyButton" destination="LnE-Vm-i0I" id="VBh-jd-Vnr"/>
-                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="locationPermissionView" destination="i5M-Pr-FkT" id="JA4-9G-eY2"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="95C-wy-b4Z"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT" customClass="LocationPermissionView" customModule="iRestaurantFinder" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -65,7 +64,7 @@
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                             <connections>
-                                <action selector="didTapaAllowButon:" destination="-1" eventType="touchUpInside" id="0a4-Gc-39U"/>
+                                <action selector="didTapaAllowButon:" destination="i5M-Pr-FkT" eventType="touchUpInside" id="rSH-JN-SbD"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LnE-Vm-i0I">
@@ -84,7 +83,7 @@
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                             <connections>
-                                <action selector="didTapDenyButton:" destination="-1" eventType="touchUpInside" id="Fpc-Je-W7u"/>
+                                <action selector="didTapDenyButton:" destination="i5M-Pr-FkT" eventType="touchUpInside" id="HzG-mE-lJd"/>
                             </connections>
                         </button>
                     </subviews>
@@ -102,6 +101,10 @@
                 <constraint firstItem="sva-Mm-RrK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="vug-76-Wuq"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <connections>
+                <outlet property="allowButton" destination="RxQ-Vz-OTv" id="iS2-Om-bYl"/>
+                <outlet property="denyButton" destination="LnE-Vm-i0I" id="1si-pa-rU8"/>
+            </connections>
             <point key="canvasLocation" x="133" y="154"/>
         </view>
     </objects>

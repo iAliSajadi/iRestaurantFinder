@@ -8,18 +8,15 @@
 
 import UIKit
 
-class LocationPermissionViewController: UIViewController {
+@IBDesignable class LocationPermissionView: BaseView {
 
     @IBOutlet weak var allowButton: UIButton!
     @IBOutlet weak var denyButton: UIButton!
-        
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
+    
+    var didTapAllow: (() -> Void)?
+    
     @IBAction func didTapaAllowButon(_ sender: UIButton) {
+        didTapAllow?()
     }
     
     @IBAction func didTapDenyButton(_ sender: UIButton) {

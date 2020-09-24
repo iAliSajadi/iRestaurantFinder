@@ -9,18 +9,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RestaurantDetailsViewController" customModule="iRestaurantFinder" customModuleProvider="target">
             <connections>
-                <outlet property="collectionView" destination="rT5-Mq-PlT" id="hOe-dL-Dfo"/>
-                <outlet property="hoursLabel" destination="NuK-75-0W3" id="Uqa-Dl-tEb"/>
-                <outlet property="locationLabel" destination="epi-L9-6Px" id="qw0-7x-Aej"/>
-                <outlet property="mapView" destination="WmO-ho-F37" id="1R1-pw-g7I"/>
-                <outlet property="pageControl" destination="9Yk-Ko-pcN" id="yhx-4H-hsO"/>
-                <outlet property="priceLabel" destination="QoA-89-oqo" id="a9K-TN-9fV"/>
-                <outlet property="ratingsLabel" destination="g8O-wd-3ZA" id="BjR-dT-yVJ"/>
-                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="restaurantDetailsView" destination="i5M-Pr-FkT" id="T5T-8h-fgv"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="o3s-HU-RAj"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT" customClass="RestaurantDetailsView" customModule="iRestaurantFinder" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="1024"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -154,9 +148,6 @@
                     <rect key="frame" x="168" y="213" width="39" height="37"/>
                     <color key="pageIndicatorTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <color key="currentPageIndicatorTintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <connections>
-                        <action selector="handlePageControl:" destination="-1" eventType="valueChanged" id="r0V-PW-yTs"/>
-                    </connections>
                 </pageControl>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -170,6 +161,15 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <connections>
+                <outlet property="collectionView" destination="rT5-Mq-PlT" id="Nij-3k-lpz"/>
+                <outlet property="hoursLabel" destination="NuK-75-0W3" id="pr1-HD-65M"/>
+                <outlet property="locationLabel" destination="epi-L9-6Px" id="o57-FI-3u5"/>
+                <outlet property="mapView" destination="WmO-ho-F37" id="npK-he-pJg"/>
+                <outlet property="pageControl" destination="9Yk-Ko-pcN" id="IkZ-9c-SUM"/>
+                <outlet property="priceLabel" destination="QoA-89-oqo" id="uS6-2H-l9t"/>
+                <outlet property="ratingsLabel" destination="g8O-wd-3ZA" id="27s-ZS-GLX"/>
+            </connections>
             <point key="canvasLocation" x="132" y="153.69458128078819"/>
         </view>
     </objects>
