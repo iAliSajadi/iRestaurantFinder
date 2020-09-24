@@ -82,12 +82,12 @@
 		208AFFDD251BC84B008AAE8A /* iRestaurantFinder */ = {
 			isa = PBXGroup;
 			children = (
+				208AFFDE251BC84B008AAE8A /* AppDelegate.swift */,
+				208AFFE0251BC84B008AAE8A /* SceneDelegate.swift */,
 				208AFFF6251BC952008AAE8A /* Views */,
 				208AFFF8251BC964008AAE8A /* Controllers */,
 				208AFFF9251BC96B008AAE8A /* Models */,
 				208AFFFA251BC97B008AAE8A /* Services */,
-				208AFFDE251BC84B008AAE8A /* AppDelegate.swift */,
-				208AFFE0251BC84B008AAE8A /* SceneDelegate.swift */,
 				208AFFE7251BC84D008AAE8A /* Assets.xcassets */,
 				208AFFE9251BC84D008AAE8A /* LaunchScreen.storyboard */,
 				208AFFEC251BC84D008AAE8A /* Info.plist */,

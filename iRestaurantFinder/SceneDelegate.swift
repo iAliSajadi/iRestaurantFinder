@@ -21,7 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow()
         window?.windowScene = windowScene
-        window?.rootViewController = UINavigationController(rootViewController: LocationPermissionViewController())
+        window?.rootViewController = UINavigationController(rootViewController: RestaurantDetailsViewController())
         window?.makeKeyAndVisible()
     }
 
