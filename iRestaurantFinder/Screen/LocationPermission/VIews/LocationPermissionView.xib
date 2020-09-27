@@ -45,22 +45,22 @@
                     </subviews>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="krB-jc-J5g">
-                    <rect key="frame" x="0.0" y="730" width="414" height="116"/>
+                    <rect key="frame" x="0.0" y="750" width="414" height="96"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RxQ-Vz-OTv">
-                            <rect key="frame" x="82" y="8" width="250" height="50"/>
+                            <rect key="frame" x="77" y="8" width="260" height="40"/>
                             <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="250" id="TNb-Tg-oyJ"/>
-                                <constraint firstAttribute="height" constant="50" id="iVt-G9-KpC"/>
+                                <constraint firstAttribute="width" constant="260" id="TNb-Tg-oyJ"/>
+                                <constraint firstAttribute="height" constant="40" id="iVt-G9-KpC"/>
                             </constraints>
-                            <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
+                            <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="18"/>
                             <state key="normal" title="Allow">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                    <integer key="value" value="25"/>
+                                    <integer key="value" value="20"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                             <connections>
@@ -68,11 +68,11 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LnE-Vm-i0I">
-                            <rect key="frame" x="82" y="58" width="250" height="50"/>
+                            <rect key="frame" x="82" y="48" width="250" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="250" id="uYw-rf-v9N"/>
                             </constraints>
-                            <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
+                            <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="16"/>
                             <state key="normal" title="No, Another Time">
                                 <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="titleShadowColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -9,12 +9,11 @@
 import Foundation
 import CoreLocation
 
-enum Result<T> {
-    case success(T)
-    case failure(Error)
+protocol LocationManagerDelegate {
+    func didChangeAuthorizationStatus()
 }
 
-class LocationService: NSObject {
+class LocationManager: NSObject {
     private let locationManager: CLLocationManager
     
     init(locationManager: CLLocationManager = .init()) {
@@ -23,7 +22,8 @@ class LocationService: NSObject {
         locationManager.delegate = self
     }
     
-    var newLocation: ((Result<CLLocation>) -> Void)?
+    var delegate: LocationManagerDelegate?
+    var newLocation: ((Result<CLLocation, LocationError>) -> Void)?
     var didChangeStatus: ((Bool) -> Void)?
     var locationAuthorizationStatus: CLAuthorizationStatus {
         return CLLocationManager.authorizationStatus()
@@ -39,18 +39,19 @@ class LocationService: NSObject {
     
 }
 
-extension LocationService: CLLocationManagerDelegate {
+extension LocationManager: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         switch status {
         case .notDetermined, .restricted, .denied:
             didChangeStatus?(false)
         default:
             didChangeStatus?(true)
+//            delegate!.didChangeAuthorizationStatus()
         }
       }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        newLocation?(.failure(error))
+        newLocation?(.failure(.unableToFindLocation))
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -58,4 +59,10 @@ extension LocationService: CLLocationManagerDelegate {
             newLocation?(.success(location))
         }
     }
+}
+
+enum LocationError: Error {
+    case unknownError
+    case disallowedByUser
+    case unableToFindLocation
 }

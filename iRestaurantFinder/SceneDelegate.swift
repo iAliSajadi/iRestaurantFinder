@@ -7,11 +7,17 @@
 //
 
 import UIKit
+import CoreLocation
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-    let locationService = LocationService()
+    let locationManager = LocationManager()
+    let yelpClient = YelpClient()
+    var viewModels = [RestaurantsViewModel]()
+    
+    let locationPermissionNavigation = UINavigationController(rootViewController: LocationPermissionViewController())
+    let restaurantsNavigation = UINavigationController(rootViewController: RestaurantsTableViewController())
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -21,47 +27,54 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow()
         window?.windowScene = windowScene
-        window?.makeKeyAndVisible()
         
-        switch locationService.locationAuthorizationStatus {
+        locationManager.didChangeStatus = { [weak self] result in
+            if result {
+                self?.locationManager.getLocation()
+            }
+        }
+
+        locationManager.newLocation = { result in
+            switch result {
+            case .success(let location):
+                self.getAllBusiness(with: location.coordinate)
+            case .failure(let error):
+                assertionFailure("Error getting the location \(error)")
+            }
+        }
+        
+        switch locationManager.locationAuthorizationStatus {
         case .notDetermined, .restricted, .denied:
-            let locationPermissionNavigation = UINavigationController(rootViewController: LocationPermissionViewController())
-            let locationPermissionController = locationPermissionNavigation.topViewController as! LocationPermissionViewController
-            locationPermissionController.locationService = locationService
+            let locationPermissionController = locationPermissionNavigation.topViewController as? LocationPermissionViewController
+            locationPermissionController!.delegate = self
             window?.rootViewController = locationPermissionNavigation
         default:
-            window?.rootViewController = UINavigationController(rootViewController: FoodCategoryTableViewController())
+            window?.rootViewController = restaurantsNavigation
+            locationManager.getLocation()
+        }
+        
+        window?.makeKeyAndVisible()
+    }
+    
+    func getAllBusiness(with coordinate: CLLocationCoordinate2D) {
+        yelpClient.search(withTerm: nil, at: .init(latitude: coordinate.latitude, longitude: coordinate.longitude)) { [weak self] (result) in
+            switch result {
+            case let .success(response):
+                guard let strongSelf = self else { return }
+                strongSelf.viewModels = response.compactMap(RestaurantsViewModel.init).sorted(by: {$0.distance < $1.distance})
+                let restaurantsTableViewController = strongSelf.restaurantsNavigation.topViewController as! RestaurantsTableViewController
+                restaurantsTableViewController.viewModels = strongSelf.viewModels
+                restaurantsTableViewController.yelpClient = strongSelf.yelpClient
+            case let .failure(error):
+                print("Error: \(error)")
+            }
         }
     }
+}
 
-    func sceneDidDisconnect(_ scene: UIScene) {
-        // Called as the scene is being released by the system.
-        // This occurs shortly after the scene enters the background, or when its session is discarded.
-        // Release any resources associated with this scene that can be re-created the next time the scene connects.
-        // The scene may re-connect later, as its session was not necessarily discarded (see `application:didDiscardSceneSessions` instead).
+extension SceneDelegate: LocationPermissionDelegate {
+    func didTapAllow() {
+        locationManager.requestLocationAuthorization()
     }
-
-    func sceneDidBecomeActive(_ scene: UIScene) {
-        // Called when the scene has moved from an inactive state to an active state.
-        // Use this method to restart any tasks that were paused (or not yet started) when the scene was inactive.
-    }
-
-    func sceneWillResignActive(_ scene: UIScene) {
-        // Called when the scene will move from an active state to an inactive state.
-        // This may occur due to temporary interruptions (ex. an incoming phone call).
-    }
-
-    func sceneWillEnterForeground(_ scene: UIScene) {
-        // Called as the scene transitions from the background to the foreground.
-        // Use this method to undo the changes made on entering the background.
-    }
-
-    func sceneDidEnterBackground(_ scene: UIScene) {
-        // Called as the scene transitions from the foreground to the background.
-        // Use this method to save data, release shared resources, and store enough scene-specific state information
-        // to restore the scene back to its current state.
-    }
-
-
 }
 

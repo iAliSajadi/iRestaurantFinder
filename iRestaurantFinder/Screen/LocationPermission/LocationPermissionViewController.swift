@@ -8,32 +8,31 @@
 
 import UIKit
 
+protocol LocationPermissionDelegate: class {
+    func didTapAllow()
+}
+
 class LocationPermissionViewController: UIViewController {
 
     @IBOutlet weak var locationPermissionView: LocationPermissionView!
     
-    var locationService: LocationService?
+    weak var delegate: LocationPermissionDelegate?
+    var locationManager: LocationManager!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        locationPermissionView.didTapAllow = { [weak self] in
-            self?.locationService?.requestLocationAuthorization()
+        locationManager = LocationManager()
+        
+        
+        locationPermissionView.didTapAllow = {
+            self.delegate?.didTapAllow()
         }
         
-        locationService?.didChangeStatus = { [weak self] result in
-            if result {
-                self?.locationService?.getLocation()
-            }
-        }
-        
-        locationService?.newLocation = { [weak self] result in
-            switch result {
-            case .success(let location):
-                print(location)
-            case .failure(let error):
-                assertionFailure("Error getting the location \(error)")
-            }
-        }
+        setupNavigationBar()
+    }
+    
+    func setupNavigationBar() {
+        navigationController?.navigationBar.isHidden = true
     }
 }

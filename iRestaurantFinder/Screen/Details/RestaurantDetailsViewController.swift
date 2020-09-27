@@ -12,6 +12,8 @@ class RestaurantDetailsViewController: UIViewController {
     
     @IBOutlet weak var restaurantDetailsView: RestaurantDetailsView!
 
+    var viewModel: RestaurantsViewModel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,6 +25,10 @@ class RestaurantDetailsViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.tintColor = .red
         navigationController?.navigationBar.titleTextAttributes = [.font: UIFont(name: "Avenir Next", size: 30)!]
+    }
+    
+    func configViews() {
+        
     }
 
 }

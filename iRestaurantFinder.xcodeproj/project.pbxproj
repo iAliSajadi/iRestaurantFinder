@@ -7,13 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2018C0AB251CDF9000EFC011 /* YelpBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2018C0AA251CDF9000EFC011 /* YelpBusiness.swift */; };
+		2018C0B0251CDFCE00EFC011 /* YelpKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2018C0AC251CDFCD00EFC011 /* YelpKeys.swift */; };
+		2018C0B1251CDFCE00EFC011 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2018C0AD251CDFCE00EFC011 /* Endpoint.swift */; };
+		2018C0B2251CDFCE00EFC011 /* YelpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2018C0AE251CDFCE00EFC011 /* YelpClient.swift */; };
+		2018C0B3251CDFCE00EFC011 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2018C0AF251CDFCE00EFC011 /* APIClient.swift */; };
+		2018C0B6251CE4E300EFC011 /* YelpCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2018C0B4251CE4E300EFC011 /* YelpCategory.swift */; };
+		2018C0B7251CE4E300EFC011 /* YelpTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2018C0B5251CE4E300EFC011 /* YelpTransaction.swift */; };
+		2018C0BD251CEB1700EFC011 /* BusinessHours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2018C0B9251CEB1700EFC011 /* BusinessHours.swift */; };
+		2018C0BE251CEB1700EFC011 /* YelpUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2018C0BA251CEB1700EFC011 /* YelpUser.swift */; };
+		2018C0BF251CEB1700EFC011 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2018C0BB251CEB1700EFC011 /* Address.swift */; };
+		2018C0C0251CEB1700EFC011 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2018C0BC251CEB1700EFC011 /* Coordinate.swift */; };
 		2051549B251C6B83007E95D4 /* RestaurantDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20515499251C6B83007E95D4 /* RestaurantDetailsView.swift */; };
 		2051549C251C6B83007E95D4 /* RestaurantDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2051549A251C6B83007E95D4 /* RestaurantDetailsView.xib */; };
-		2063720E251C598700474BB5 /* FoodCategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2063720D251C598700474BB5 /* FoodCategoryTableViewController.swift */; };
-		20637216251C60AA00474BB5 /* FoodCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20637214251C60AA00474BB5 /* FoodCategoryCell.swift */; };
-		20637217251C60AA00474BB5 /* FoodCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20637215251C60AA00474BB5 /* FoodCategoryCell.xib */; };
-		2068B64F251C83DA00F29FD6 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2068B64E251C83DA00F29FD6 /* LocationService.swift */; };
+		2063720E251C598700474BB5 /* RestaurantsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2063720D251C598700474BB5 /* RestaurantsTableViewController.swift */; };
+		20637216251C60AA00474BB5 /* RestaurantsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20637214251C60AA00474BB5 /* RestaurantsCell.swift */; };
+		20637217251C60AA00474BB5 /* RestaurantsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20637215251C60AA00474BB5 /* RestaurantsCell.xib */; };
+		2068B64F251C83DA00F29FD6 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2068B64E251C83DA00F29FD6 /* LocationManager.swift */; };
 		2068B652251C910B00F29FD6 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2068B651251C910B00F29FD6 /* BaseView.swift */; };
+		207202EA251D0B8900DEA2C0 /* RestaurantsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207202E9251D0B8900DEA2C0 /* RestaurantsViewModel.swift */; };
 		208AFFDF251BC84B008AAE8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208AFFDE251BC84B008AAE8A /* AppDelegate.swift */; };
 		208AFFE1251BC84B008AAE8A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208AFFE0251BC84B008AAE8A /* SceneDelegate.swift */; };
 		208AFFE8251BC84D008AAE8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 208AFFE7251BC84D008AAE8A /* Assets.xcassets */; };
@@ -25,13 +37,25 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2018C0AA251CDF9000EFC011 /* YelpBusiness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YelpBusiness.swift; sourceTree = "<group>"; };
+		2018C0AC251CDFCD00EFC011 /* YelpKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YelpKeys.swift; sourceTree = "<group>"; };
+		2018C0AD251CDFCE00EFC011 /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		2018C0AE251CDFCE00EFC011 /* YelpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YelpClient.swift; sourceTree = "<group>"; };
+		2018C0AF251CDFCE00EFC011 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		2018C0B4251CE4E300EFC011 /* YelpCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YelpCategory.swift; sourceTree = "<group>"; };
+		2018C0B5251CE4E300EFC011 /* YelpTransaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YelpTransaction.swift; sourceTree = "<group>"; };
+		2018C0B9251CEB1700EFC011 /* BusinessHours.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessHours.swift; sourceTree = "<group>"; };
+		2018C0BA251CEB1700EFC011 /* YelpUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YelpUser.swift; sourceTree = "<group>"; };
+		2018C0BB251CEB1700EFC011 /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
+		2018C0BC251CEB1700EFC011 /* Coordinate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
 		20515499251C6B83007E95D4 /* RestaurantDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailsView.swift; sourceTree = "<group>"; };
 		2051549A251C6B83007E95D4 /* RestaurantDetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RestaurantDetailsView.xib; sourceTree = "<group>"; };
-		2063720D251C598700474BB5 /* FoodCategoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCategoryTableViewController.swift; sourceTree = "<group>"; };
-		20637214251C60AA00474BB5 /* FoodCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCategoryCell.swift; sourceTree = "<group>"; };
-		20637215251C60AA00474BB5 /* FoodCategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoodCategoryCell.xib; sourceTree = "<group>"; };
-		2068B64E251C83DA00F29FD6 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		2063720D251C598700474BB5 /* RestaurantsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsTableViewController.swift; sourceTree = "<group>"; };
+		20637214251C60AA00474BB5 /* RestaurantsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsCell.swift; sourceTree = "<group>"; };
+		20637215251C60AA00474BB5 /* RestaurantsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RestaurantsCell.xib; sourceTree = "<group>"; };
+		2068B64E251C83DA00F29FD6 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		2068B651251C910B00F29FD6 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		207202E9251D0B8900DEA2C0 /* RestaurantsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsViewModel.swift; sourceTree = "<group>"; };
 		208AFFDB251BC84B008AAE8A /* iRestaurantFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iRestaurantFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		208AFFDE251BC84B008AAE8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		208AFFE0251BC84B008AAE8A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,12 +79,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2018C0B8251CE7AB00EFC011 /* Location Management */ = {
+			isa = PBXGroup;
+			children = (
+				2068B64E251C83DA00F29FD6 /* LocationManager.swift */,
+			);
+			path = "Location Management";
+			sourceTree = "<group>";
+		};
 		2068B650251C90F400F29FD6 /* Screen */ = {
 			isa = PBXGroup;
 			children = (
 				20E9AB96251C94BA0000034C /* LocationPermission */,
 				20E9AB94251C94730000034C /* TableView */,
-				2063720D251C598700474BB5 /* FoodCategoryTableViewController.swift */,
+				2063720D251C598700474BB5 /* RestaurantsTableViewController.swift */,
 				2068B653251C923300F29FD6 /* Details */,
 			);
 			path = Screen;
@@ -82,6 +114,14 @@
 				20515499251C6B83007E95D4 /* RestaurantDetailsView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		207202E8251D0B5F00DEA2C0 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				207202E9251D0B8900DEA2C0 /* RestaurantsViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		208AFFD2251BC84B008AAE8A = {
@@ -108,7 +148,9 @@
 				2068B651251C910B00F29FD6 /* BaseView.swift */,
 				2068B650251C90F400F29FD6 /* Screen */,
 				208AFFF9251BC96B008AAE8A /* Models */,
-				208AFFFA251BC97B008AAE8A /* Services */,
+				207202E8251D0B5F00DEA2C0 /* ViewModels */,
+				2018C0B8251CE7AB00EFC011 /* Location Management */,
+				208AFFFA251BC97B008AAE8A /* Networking */,
 				208AFFE7251BC84D008AAE8A /* Assets.xcassets */,
 				208AFFE9251BC84D008AAE8A /* LaunchScreen.storyboard */,
 				208AFFEC251BC84D008AAE8A /* Info.plist */,
@@ -119,16 +161,26 @@
 		208AFFF9251BC96B008AAE8A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				2018C0AA251CDF9000EFC011 /* YelpBusiness.swift */,
+				2018C0B4251CE4E300EFC011 /* YelpCategory.swift */,
+				2018C0B5251CE4E300EFC011 /* YelpTransaction.swift */,
+				2018C0BB251CEB1700EFC011 /* Address.swift */,
+				2018C0B9251CEB1700EFC011 /* BusinessHours.swift */,
+				2018C0BC251CEB1700EFC011 /* Coordinate.swift */,
+				2018C0BA251CEB1700EFC011 /* YelpUser.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
 		};
-		208AFFFA251BC97B008AAE8A /* Services */ = {
+		208AFFFA251BC97B008AAE8A /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				2068B64E251C83DA00F29FD6 /* LocationService.swift */,
+				2018C0AF251CDFCE00EFC011 /* APIClient.swift */,
+				2018C0AD251CDFCE00EFC011 /* Endpoint.swift */,
+				2018C0AE251CDFCE00EFC011 /* YelpClient.swift */,
+				2018C0AC251CDFCD00EFC011 /* YelpKeys.swift */,
 			);
-			path = Services;
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		20E9AB94251C94730000034C /* TableView */ = {
@@ -142,8 +194,8 @@
 		20E9AB95251C948E0000034C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				20637215251C60AA00474BB5 /* FoodCategoryCell.xib */,
-				20637214251C60AA00474BB5 /* FoodCategoryCell.swift */,
+				20637215251C60AA00474BB5 /* RestaurantsCell.xib */,
+				20637214251C60AA00474BB5 /* RestaurantsCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -228,7 +280,7 @@
 				208AFFE8251BC84D008AAE8A /* Assets.xcassets in Resources */,
 				208AFFF5251BC945008AAE8A /* LocationPermissionView.xib in Resources */,
 				2051549C251C6B83007E95D4 /* RestaurantDetailsView.xib in Resources */,
-				20637217251C60AA00474BB5 /* FoodCategoryCell.xib in Resources */,
+				20637217251C60AA00474BB5 /* RestaurantsCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,13 +291,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2068B64F251C83DA00F29FD6 /* LocationService.swift in Sources */,
+				2018C0B3251CDFCE00EFC011 /* APIClient.swift in Sources */,
+				2068B64F251C83DA00F29FD6 /* LocationManager.swift in Sources */,
 				2051549B251C6B83007E95D4 /* RestaurantDetailsView.swift in Sources */,
 				208AFFF4251BC945008AAE8A /* LocationPermissionView.swift in Sources */,
+				2018C0B2251CDFCE00EFC011 /* YelpClient.swift in Sources */,
+				2018C0C0251CEB1700EFC011 /* Coordinate.swift in Sources */,
+				2018C0B1251CDFCE00EFC011 /* Endpoint.swift in Sources */,
+				2018C0BF251CEB1700EFC011 /* Address.swift in Sources */,
 				20E9AB93251C93E30000034C /* RestaurantDetailsViewController.swift in Sources */,
 				20E9AB99251C95710000034C /* LocationPermissionViewController.swift in Sources */,
-				20637216251C60AA00474BB5 /* FoodCategoryCell.swift in Sources */,
-				2063720E251C598700474BB5 /* FoodCategoryTableViewController.swift in Sources */,
+				20637216251C60AA00474BB5 /* RestaurantsCell.swift in Sources */,
+				2018C0BD251CEB1700EFC011 /* BusinessHours.swift in Sources */,
+				2063720E251C598700474BB5 /* RestaurantsTableViewController.swift in Sources */,
+				207202EA251D0B8900DEA2C0 /* RestaurantsViewModel.swift in Sources */,
+				2018C0B6251CE4E300EFC011 /* YelpCategory.swift in Sources */,
+				2018C0B7251CE4E300EFC011 /* YelpTransaction.swift in Sources */,
+				2018C0BE251CEB1700EFC011 /* YelpUser.swift in Sources */,
+				2018C0B0251CDFCE00EFC011 /* YelpKeys.swift in Sources */,
+				2018C0AB251CDF9000EFC011 /* YelpBusiness.swift in Sources */,
 				208AFFDF251BC84B008AAE8A /* AppDelegate.swift in Sources */,
 				208AFFE1251BC84B008AAE8A /* SceneDelegate.swift in Sources */,
 				2068B652251C910B00F29FD6 /* BaseView.swift in Sources */,
