@@ -27,31 +27,18 @@ class YelpClient: APIClient {
         fetchAll(with: request, completion: completion)
     }
     
-    func business(withID id: String, completion: @escaping (Result<YelpBusiness, Error>) -> Void) {
+    func business(withId id: String, completion: @escaping (Result<YelpBusinessDetails, Error>) -> Void) {
         let endpoint = Yelp.business(id: id)
         let request = endpoint.authorizedRequest(withKey: YelpKeys.token)
         fetch(with: request, completion: completion)
     }
     
-    func updateBusiness(_ business: YelpBusiness, completion: @escaping (Result<YelpBusiness, Error>) -> Void) {
+    func updateBusiness(_ business: YelpBusiness, completion: @escaping (Result<YelpBusinessDetails, Error>) -> Void) {
         let endpoint = Yelp.business(id: business.id)
         let request = endpoint.authorizedRequest(withKey: YelpKeys.token)
         
         fetch(with: request, completion: completion)
     }
-    
-//    func getRestaurantImage(with Url: URL) -> UIImage? {
-//        var restaurantImage: UIImage?
-//        fetchRestaurantImage(with: Url) { result in
-//            switch result {
-//            case .success(let image):
-//                restaurantImage = image
-//            case .failure(let error):
-//                print("Error: \(error)")
-//            }
-//        }
-//        return restaurantImage
-//    }
     
     func getRestaurantImage(with Url: URL, completion: @escaping (Result<UIImage, APIError>) -> Void) {
         fetchRestaurantImage(with: Url, completion: completion)

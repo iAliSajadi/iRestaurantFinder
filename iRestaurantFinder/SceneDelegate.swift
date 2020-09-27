@@ -9,6 +9,10 @@
 import UIKit
 import CoreLocation
 
+//protocol SceneDelegateAction {
+//    func didPushTo(_ restaurantsNavigation: UINavigationController)
+//}
+
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
@@ -27,6 +31,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow()
         window?.windowScene = windowScene
+        
         
         locationManager.didChangeStatus = { [weak self] result in
             if result {
@@ -57,24 +62,51 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     func getAllBusiness(with coordinate: CLLocationCoordinate2D) {
+        
         yelpClient.search(withTerm: nil, at: .init(latitude: coordinate.latitude, longitude: coordinate.longitude)) { [weak self] (result) in
             switch result {
-            case let .success(response):
+            case let .success(businesses):
                 guard let strongSelf = self else { return }
-                strongSelf.viewModels = response.compactMap(RestaurantsViewModel.init).sorted(by: {$0.distance < $1.distance})
-                let restaurantsTableViewController = strongSelf.restaurantsNavigation.topViewController as! RestaurantsTableViewController
-                restaurantsTableViewController.viewModels = strongSelf.viewModels
-                restaurantsTableViewController.yelpClient = strongSelf.yelpClient
+                strongSelf.viewModels = businesses.compactMap(RestaurantsViewModel.init).sorted(by: {$0.distance < $1.distance})
+                
+                let restaurantsTableViewController = strongSelf.restaurantsNavigation.topViewController as? RestaurantsTableViewController
+                
+                restaurantsTableViewController?.viewModels = strongSelf.viewModels
+                restaurantsTableViewController?.yelpClient = strongSelf.yelpClient
+                restaurantsTableViewController?.delegate = self
+                
             case let .failure(error):
                 print("Error: \(error)")
             }
         }
     }
+    
+    func getBusinessDetails(withId id: String) {
+        yelpClient.business(withId: id) { [weak self] (result) in
+            switch result {
+            case .success(let details):
+                guard let strongSelf = self else { return }
+                print("Details: \(details)")
+                
+                let viewModel = RestaurantDetailsViewModel(details: details)
+                let restaurantDetailsViewController = strongSelf.restaurantsNavigation.topViewController as? RestaurantDetailsViewController
+                restaurantDetailsViewController?.viewModel = viewModel
+                
+            case .failure(let error):
+                print("Dailed to get details: \(error)")
+            }
+        }
+    }
 }
 
-extension SceneDelegate: LocationPermissionDelegate {
+extension SceneDelegate: LocationPermissionDelegate, RestaurantsTableViewDelegate {
     func didTapAllow() {
         locationManager.requestLocationAuthorization()
+    }
+    
+    func didTapCell(_ viewModel: RestaurantsViewModel) {
+        getBusinessDetails(withId: viewModel.id)
+        print("didTapCell")
     }
 }
 

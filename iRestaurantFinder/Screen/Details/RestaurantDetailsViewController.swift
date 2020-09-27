@@ -10,14 +10,17 @@ import UIKit
 
 class RestaurantDetailsViewController: UIViewController {
     
-    @IBOutlet weak var restaurantDetailsView: RestaurantDetailsView!
+    @IBOutlet weak var restaurantDetailsView: RestaurantDetailsView?
 
-    var viewModel: RestaurantsViewModel!
+    var viewModel: RestaurantDetailsViewModel? {
+        didSet {
+            configViews()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
     
 
@@ -28,7 +31,11 @@ class RestaurantDetailsViewController: UIViewController {
     }
     
     func configViews() {
-        
+        if let viewModel = viewModel {
+            restaurantDetailsView?.hoursLabel?.text = viewModel.isOpen
+            restaurantDetailsView?.locationLabel?.text = viewModel.phoneNumber
+            restaurantDetailsView?.ratingsLabel?.text = viewModel.rating
+        }
     }
 
 }

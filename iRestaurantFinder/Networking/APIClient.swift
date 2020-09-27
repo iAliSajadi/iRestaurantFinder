@@ -14,7 +14,7 @@ protocol APIClient {
 //    func fetch<T: Codable>(with request: URLRequest, completion: @escaping (Result<T, APIError>) -> Void)
 //    func fetchAll<T: Codable>(with request: URLRequest, completion: @escaping (Result<[T], APIError>) -> Void)
     
-    func fetch(with request: URLRequest, completion: @escaping (Result<YelpBusiness, Error>) -> Void)
+    func fetch(with request: URLRequest, completion: @escaping (Result<YelpBusinessDetails, Error>) -> Void)
     func fetchAll(with request: URLRequest, completion: @escaping (Result<[YelpBusiness], Error>) -> Void)
     func fetchRestaurantImage(with Url: URL, completion: @escaping (Result<UIImage, APIError>) -> Void)
 }
@@ -22,7 +22,6 @@ protocol APIClient {
 extension APIClient {
     var JsonDecoder: JSONDecoder {
         let decoder = JSONDecoder()
-//        decoder.keyDecodingStrategy = .convertFromSnakeCase
         return decoder
     }
 //    typealias JSON = [String: AnyObject]
@@ -77,7 +76,7 @@ extension APIClient {
 //        }.resume()
 //    }
     
-    func fetch(with request: URLRequest, completion: @escaping (Result<YelpBusiness, Error>) -> Void) {
+    func fetch(with request: URLRequest, completion: @escaping (Result<YelpBusinessDetails, Error>) -> Void) {
         session.dataTask(with: request) { data, response, error in
             guard let httpResponse = response as? HTTPURLResponse else {
 //                completion(.failure(.requestFailed))
@@ -87,9 +86,9 @@ extension APIClient {
             if httpResponse.statusCode == 200 {
                 if let data = data {
                     do {
-                        let yelpBusiness = try self.JsonDecoder.decode(YelpBusiness.self, from: data)
+                        let businessDetails = try self.JsonDecoder.decode(YelpBusinessDetails.self, from: data)
                         OperationQueue.main.addOperation {
-                        completion(.success(yelpBusiness))
+                        completion(.success(businessDetails))
                         }
                     } catch {
                         completion(.failure(error))
@@ -137,27 +136,6 @@ extension APIClient {
     }
     
     func fetchRestaurantImage(with Url: URL, completion: @escaping (Result<UIImage, APIError>) -> Void) {
-//        session.dataTask(with: Url) { data, response, error in
-//            guard let httpResponse = response as? HTTPURLResponse else {
-//                completion(.failure(.requestFailed))
-//                return
-//            }
-//            if httpResponse.statusCode == 200 {
-//                if let data = data {
-//                    if let image = UIImage(data: data) {
-//                        OperationQueue.main.addOperation {
-//                        completion(.success(image))
-//                        }
-//                    } else {
-//                        completion(.failure(.downloadImageFailed))
-//                    }
-//                } else {
-//                    completion(.failure(.invalidData))
-//                }
-//            } else {
-//                completion(.failure(.responseUnsuccessful))
-//            }
-//        }.resume()
         let request = URLRequest(url: Url)
         session.dataTask(with: request) { data, response, error in
             guard let httpResponse = response as? HTTPURLResponse else {

@@ -11,13 +11,13 @@ import MapKit
 
 @IBDesignable class RestaurantDetailsView: BaseView {
 
-    @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var pageControl: UIPageControl!
-    @IBOutlet weak var priceLabel: UILabel!
-    @IBOutlet weak var hoursLabel: UILabel!
-    @IBOutlet weak var locationLabel: UILabel!
-    @IBOutlet weak var ratingsLabel: UILabel!
-    @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var collectionView: UICollectionView?
+    @IBOutlet weak var pageControl: UIPageControl?
+    @IBOutlet weak var priceLabel: UILabel?
+    @IBOutlet weak var hoursLabel: UILabel?
+    @IBOutlet weak var locationLabel: UILabel?
+    @IBOutlet weak var ratingsLabel: UILabel?
+    @IBOutlet weak var mapView: MKMapView?
 
     @IBAction func handlePageControl(_ sender: UIPageControl) {
     }

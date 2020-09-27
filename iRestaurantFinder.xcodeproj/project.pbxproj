@@ -18,6 +18,8 @@
 		2018C0BE251CEB1700EFC011 /* YelpUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2018C0BA251CEB1700EFC011 /* YelpUser.swift */; };
 		2018C0BF251CEB1700EFC011 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2018C0BB251CEB1700EFC011 /* Address.swift */; };
 		2018C0C0251CEB1700EFC011 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2018C0BC251CEB1700EFC011 /* Coordinate.swift */; };
+		203FEB2F25205E850093E0A6 /* YelpBusinessDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203FEB2E25205E850093E0A6 /* YelpBusinessDetails.swift */; };
+		203FEB312520750A0093E0A6 /* RestaurantDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203FEB302520750A0093E0A6 /* RestaurantDetailsViewModel.swift */; };
 		2051549B251C6B83007E95D4 /* RestaurantDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20515499251C6B83007E95D4 /* RestaurantDetailsView.swift */; };
 		2051549C251C6B83007E95D4 /* RestaurantDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2051549A251C6B83007E95D4 /* RestaurantDetailsView.xib */; };
 		2063720E251C598700474BB5 /* RestaurantsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2063720D251C598700474BB5 /* RestaurantsTableViewController.swift */; };
@@ -48,6 +50,8 @@
 		2018C0BA251CEB1700EFC011 /* YelpUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YelpUser.swift; sourceTree = "<group>"; };
 		2018C0BB251CEB1700EFC011 /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		2018C0BC251CEB1700EFC011 /* Coordinate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
+		203FEB2E25205E850093E0A6 /* YelpBusinessDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpBusinessDetails.swift; sourceTree = "<group>"; };
+		203FEB302520750A0093E0A6 /* RestaurantDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailsViewModel.swift; sourceTree = "<group>"; };
 		20515499251C6B83007E95D4 /* RestaurantDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailsView.swift; sourceTree = "<group>"; };
 		2051549A251C6B83007E95D4 /* RestaurantDetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RestaurantDetailsView.xib; sourceTree = "<group>"; };
 		2063720D251C598700474BB5 /* RestaurantsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsTableViewController.swift; sourceTree = "<group>"; };
@@ -120,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				207202E9251D0B8900DEA2C0 /* RestaurantsViewModel.swift */,
+				203FEB302520750A0093E0A6 /* RestaurantDetailsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -162,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				2018C0AA251CDF9000EFC011 /* YelpBusiness.swift */,
+				203FEB2E25205E850093E0A6 /* YelpBusinessDetails.swift */,
 				2018C0B4251CE4E300EFC011 /* YelpCategory.swift */,
 				2018C0B5251CE4E300EFC011 /* YelpTransaction.swift */,
 				2018C0BB251CEB1700EFC011 /* Address.swift */,
@@ -295,7 +301,9 @@
 				2068B64F251C83DA00F29FD6 /* LocationManager.swift in Sources */,
 				2051549B251C6B83007E95D4 /* RestaurantDetailsView.swift in Sources */,
 				208AFFF4251BC945008AAE8A /* LocationPermissionView.swift in Sources */,
+				203FEB312520750A0093E0A6 /* RestaurantDetailsViewModel.swift in Sources */,
 				2018C0B2251CDFCE00EFC011 /* YelpClient.swift in Sources */,
+				203FEB2F25205E850093E0A6 /* YelpBusinessDetails.swift in Sources */,
 				2018C0C0251CEB1700EFC011 /* Coordinate.swift in Sources */,
 				2018C0B1251CDFCE00EFC011 /* Endpoint.swift in Sources */,
 				2018C0BF251CEB1700EFC011 /* Address.swift in Sources */,

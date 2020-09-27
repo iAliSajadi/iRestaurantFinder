@@ -8,9 +8,14 @@
 
 import UIKit
 
+protocol RestaurantsTableViewDelegate: class {
+    func didTapCell(_ viewModel: RestaurantsViewModel)
+}
+
 class RestaurantsTableViewController: UITableViewController {
 
-    let identifier = "RestaurantsCell"
+    let identifier = "restaurantsCell"
+    weak var delegate: RestaurantsTableViewDelegate!
     var yelpClient: YelpClient!
     
     var viewModels = [RestaurantsViewModel]() {
@@ -21,7 +26,7 @@ class RestaurantsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setupNavigationBar()
         setupTableView()
     }
@@ -56,10 +61,17 @@ class RestaurantsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let index = tableView.indexPathForSelectedRow?.row else { return }
         
-        let restaurantDetailsNavigation = UINavigationController(rootViewController: RestaurantDetailsViewController())
-        let restaurantDetailsController = restaurantDetailsNavigation.topViewController as? RestaurantDetailsViewController
-        restaurantDetailsController?.viewModel = viewModels[index]
+        let viewModel = viewModels[indexPath.row]
+        delegate.didTapCell(viewModel)
+        
+        navigationController!.pushViewController(RestaurantDetailsViewController(), animated: true)
+
     }
 }
+
+//extension RestaurantsTableViewController: SceneDelegateAction {
+//    func didPushTo(_ restaurantsNavigation: UINavigationController) {
+//        <#code#>
+//    }
+//}
